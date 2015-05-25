@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" id="9lessons-demo">
+<head>
+	<title>:: Audio Control :: Theme - 2</title>
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+  	<link rel="stylesheet" type="text/css" href="assets/css/theme-2.css" />
+	<!-- JS FILE's  -->
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/jquery.audioControls.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#playListContainer").audioControls({
+				autoPlay : false,
+				timer: 'increment',
+				onAudioChange : function(response){
+					$('.songPlay').text(response.title + ' ...');
+				},
+				onVolumeChange : function(vol){
+					var obj = $('.volume');
+					if(vol <= 0){
+						obj.attr('class','volume mute');
+					} else if(vol <= 33){
+						obj.attr('class','volume volume1');
+					} else if(vol > 33 && vol <= 66){
+						obj.attr('class','volume volume2');
+					} else if(vol > 66){
+						obj.attr('class','volume volume3');
+					} else {
+						obj.attr('class','volume volume1');
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+<div class="mainContainer">
+<h1>Audio player with Jquery Audio Control Plugin</h1>
+<table style="width:100%">
+<tr><td valign="top">
+	<div class="containerPlayer">
+		<div id="listContainer" class="playlistContainer">
+		<ul id="playListContainer">
+			 <li data-src="https://s3.amazonaws.com/9lessonslabs/songs/Everything+But+Mine.mp3">
+				<a href="#">
+					BSB - Everything But Mine
+				</a>
+			</li>
+			<li data-src="https://s3.amazonaws.com/9lessonslabs/songs/Linkin+Park+-+Numb.mp3">
+				<a href="#">
+					Linkin Park - Numb
+				</a>
+			</li>
+			<li data-src="https://s3.amazonaws.com/9lessonslabs/songs/love-the-way-you-lie-rihanna-feat-eminem.mp3">
+				<a href="#">
+					Eminem - Love The Way You 
+				</a>
+			</li>
+			<li data-src="https://s3.amazonaws.com/9lessonslabs/songs/rolling-in-the-deep-adele.mp3">
+				<a href="#">
+					Adele - Rolling In The Deep
+				</a>
+			</li>
+			<li data-src="https://s3.amazonaws.com/9lessonslabs/songs/when-i-was-your-man-bruno-mars.mp3">
+				<a href="#">
+					Bruno - When I Was Your Man
+				</a>
+			</li>
+		</ul>
+	</div>
+		<div id="playerContainer">
+		<div id="controlContainer">  
+			
+			<ul class="controls">
+			<li>
+				<a href="#" class="shuffle shuffleActive" data-attr="shuffled"></a>
+			</li>
+				<li>
+					<a href="#" class="left" data-attr="prevAudio"></a>
+				</li>
+				<li>
+					<a href="#" class="play" data-attr="playPauseAudio"></a>
+				</li>
+				<li>
+					<a href="#" class="right" data-attr="nextAudio"></a>
+				</li>
+				<li>
+					<a href="#" class="repeat" data-attr="repeatSong"></a>
+				</li>
+			</ul>
+			<div class="audioDetails">
+				<span class="songPlay"></span>
+				<span data-attr="timer" class="audioTime"></span>
+			</div>
+			<div class="progress">
+				<div data-attr="seekableTrack" class="seekableTrack"></div>
+				<div class="updateProgress"></div>
+			</div>
+			
+		</div>
+		
+		<div class="volumeControl">
+			<div class="volume volume1"></div>
+			<input class="bar" data-attr="rangeVolume" type="range" min="0" max="1" step="0.1" value="0.7" />
+		</div>
+	</div>
+	</div>
+	</td>
+	<td valign='top' style='text-align:right;width:350px'>
+	<script type="text/javascript">
+    google_ad_client = "ca-pub-6904774409601870";
+google_ad_host = "pub-1556223355139109";
+    google_ad_slot = "9830233637";
+    google_ad_width = 300;
+    google_ad_height = 600;
+</script>
+<!-- Big Banner 600X300 -->
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+	</td></tr>
+	</table>
+
+</div>
+</body>
+</html>	

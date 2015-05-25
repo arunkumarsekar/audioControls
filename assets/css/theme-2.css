@@ -1,0 +1,56 @@
+* { padding: 0px; margin :0px; }
+body { background-color:#999999; font-family: SourceSansPro-Regular, Helvetica, Arial, 'sans-serif'; font-size: 14px; line-height: 1.428571429; }
+ul, li { list-style: none; }
+.mainContainer { margin:0 auto; width:800px }
+.containerPlayer, .containerSource { display:inline-block; float:left; padding:10px; margin:0px 10px; }
+
+.snippet { width:70%; border:1px solid #ccc; border-radius:5px; min-height:280px; max-height:280px; color:#fff; background-color:#343434; margin-top:1rem;  }
+.snippet:nth-child(2) { margin-top:2rem; }
+.snippet pre { max-height:230px; padding:5px; }
+.snippet h4 { padding:10px; color:#343434; background-color:#00bd9b; }
+
+/* Playlist */
+#listContainer { width:310px; background-color:#fafafa;  }
+#listContainer ul { background-color: #fafafa; clear: both; cursor: pointer;  }
+#listContainer li { padding:10px; }
+#listContainer li:nth-child(even) { background-color:#efefef; }
+#listContainer li:hover, #listContainer li:nth-child(even):hover { background-color:#00bd9b; color:#fff; }
+#listContainer li a { text-decoration: none; color:#4e4f4f; }
+#listContainer li.activeAudio { background-color:#00bd9b; }
+
+
+/* Player Controls */
+#playerContainer { width:310px; height:130px; background-color:#333333;  }
+.controls li:first{margin-right:10px}
+.controls li { float:left; display:inline-block; width:50px; text-align:center; margin-top:8px;margin-left:10px }
+
+.controls li a { display:inline-block; }
+.playAudio,.play { background: url('../images/audio/audio_icons.png') no-repeat -2px -35px; width: 32px; height: 32px; margin:auto; }
+.playAudio:hover { background: url('../images/audio/audio_icons.png') no-repeat -2px -3px; }
+.pauseAudio { background: url('../images/audio/audio_icons.png') no-repeat -36px -35px; width: 32px; height: 32px; margin:auto; }
+.pauseAudio:hover { background: url('../images/audio/audio_icons.png') no-repeat -36px -3px; }
+.shuffle { background: url('../images/audio/audio_icons.png') no-repeat -28px -96px; width: 32px; height: 32px; margin:auto; }
+.shuffleActive, .shuffle:hover { background: url('../images/audio/audio_icons.png') no-repeat -28px -71px; width: 32px; height: 32px; margin:auto; }
+.left { background: url('../images/audio/audio_icons.png') no-repeat -60px -99px; width: 24px; height: 24px; margin:auto; margin-top:4px; opacity:0.4; }
+.left:not(.disabled):hover { opacity:1; }
+.left.disabled, .right.disabled { opacity:0.4; cursor:default; }
+.right { background: url('../images/audio/audio_icons.png') no-repeat -88px -75px; width: 24px; height: 24px; margin:auto; margin-top:4px; opacity:0.4; }
+.right:not(.disabled):hover { opacity:1; }
+.repeat { background: url('../images/audio/audio_icons.png') no-repeat -4px -103px; width: 21px; height: 21px; margin:auto; margin-top:7px; }
+.repeat:hover, .repeat.loopActive { background: url('../images/audio/audio_icons.png') no-repeat -4px -79px; }
+.volume { width: 20px; height: 20px; margin-left:5px; margin-right:5px; float:left; background: url('../images/audio/audio_icons.png') no-repeat; }
+.volume1 { background-position: -5px -150px; }
+.volume2 { background-position: -5px -198px; }
+.volume3 { background-position: -5px -246px; }
+.mute { background-position: -34px -127px; }
+.progress { clear:both; height:4px; background-color:#666666; width:100%; cursor:pointer; position:relative; }
+.progress .updateProgress { width:0px; background-color:#00BD9B; height:100%; float:left; position:relative; }
+.volumeControl { position: relative; margin: 8px auto; }
+.volumeControl .updateProgress { display:inline-block; vertical-align:middle; margin-top:2px; }
+input[type="range"] { -webkit-appearance: none; -moz-appearance: none; background-color: #00BD9B; height: 2px; }
+.audioDetails { clear:both; color:#00bd9b; font-size:12px; padding:5px; }
+.audioTime { display: inline-block; text-align: right; float: right; }
+.songPlay { display:inline-block; }
+.seekableTrack { width: 0%; background-color:#666666; height: 4px; position: absolute; z-index: 0; display: block; }
+.seekableTrack, .progress .updateProgress { -webkit-transition: width 0.6s ease; -moz-transition: width 0.6s ease; -o-transition: width 0.6s ease; transition: width 0.6s ease; }
+
