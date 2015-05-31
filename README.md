@@ -77,6 +77,8 @@ Design your own theme how ever you want and just pust *data-attr* appropriate pl
 	<!-- EOF Playlist -->
 </div>
 ```
+## Note
+Removed songs folder and mp3's, add songs folder to keep demo working
 ### jQuery
 ```javascript
 $(document).ready(function(){
